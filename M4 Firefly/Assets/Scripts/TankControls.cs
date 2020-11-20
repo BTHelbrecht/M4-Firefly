@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class TankControls : MonoBehaviour
 {
-    Transform tankPosition;
+    //Transform tankPosition;
+    TankData tankData;
+    TankMotor tankMotor;
 
-    public float speedForward;
-    public float speedReverse;
-    public float speedTankRotation;
+    //public float speedForward;
+    //public float speedReverse;
+    //public float speedTankRotation;
 
     // Start is called before the first frame update
+
+    
+
     void Start()
     {
-        tankPosition = this.gameObject.transform;
+        //tankPosition = this.gameObject.transform;
+        tankData = this.gameObject.GetComponent<TankData>();
+        tankMotor = this.gameObject.GetComponent<TankMotor>();
     }
 
     // Update is called once per frame
@@ -28,12 +35,12 @@ public class TankControls : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             Debug.Log("Forward");
-            TankMotor(speedForward);
+            tankMotor.TankEngine(tankData.speedForward);
         }
         else if (Input.GetKey(KeyCode.S))
         {
             Debug.Log("Reverse");
-            TankMotor(-speedReverse);
+            tankMotor.TankEngine(-tankData.speedReverse);
         }
         else
         {
@@ -43,26 +50,29 @@ public class TankControls : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             Debug.Log("Left");
-            TankRotation(speedTankRotation);
+            tankMotor.TankRotation(-tankData.speedTankRotation);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             Debug.Log("Right");
-            TankRotation(-speedTankRotation);
+            tankMotor.TankRotation(tankData.speedTankRotation);
         }
         else
         {
             Debug.Log("Idol Rotate");
         }
-    }
 
+
+    }
+/*
     void TankMotor(float speed)
     {
-        tankPosition.transform.Translate(new Vector3(0, 0, 1) * speed * Time.deltaTime);
+        tankData.transform.Translate(new Vector3(0, 0, 1) * speed * Time.deltaTime);
     }
 
     void TankRotation(float speed)
     {
-        tankPosition.transform.Rotate(new Vector3(0, 10, 0) * speed * Time.deltaTime);
+        tankData.transform.Rotate(new Vector3(0, 10, 0) * speed * Time.deltaTime);
     }
+*/
 }

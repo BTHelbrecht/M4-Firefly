@@ -691,7 +691,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 902558870}
+  - component: {fileID: 902558871}
   - component: {fileID: 902558869}
+  - component: {fileID: 902558872}
   m_Layer: 0
   m_Name: Tank Position
   m_TagString: Untagged
@@ -711,9 +713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad846e01e74ec66499b030beffd7459a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedForward: 13
-  speedReverse: 7
-  speedTankRotation: 9
 --- !u!4 &902558870
 Transform:
   m_ObjectHideFlags: 0
@@ -731,6 +730,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &902558871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902558868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e36c192c404a12541b6703e3b0d4afb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedForward: 13
+  speedReverse: 7
+  speedTankRotation: 9
+  speedTurretRotation: 0
+--- !u!114 &902558872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902558868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b3966e4f2cf2d44a0b620c6459c6c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
