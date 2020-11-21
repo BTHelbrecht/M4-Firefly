@@ -9,4 +9,5 @@ public class TankData : MonoBehaviour
     public float speedReverse;
     public float speedTankRotation;
     public float speedTurretRotation;
+    public int ammoCapacity;
 }

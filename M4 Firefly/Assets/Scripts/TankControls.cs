@@ -7,20 +7,16 @@ public class TankControls : MonoBehaviour
     //Transform tankPosition;
     TankData tankData;
     TankMotor tankMotor;
+    TurretMotor turretMotor;
+    InstantiateShell shellInstance;
 
-    //public float speedForward;
-    //public float speedReverse;
-    //public float speedTankRotation;
-
-    // Start is called before the first frame update
-
-    
-
-    void Start()
+    void Awake()
     {
         //tankPosition = this.gameObject.transform;
         tankData = this.gameObject.GetComponent<TankData>();
         tankMotor = this.gameObject.GetComponent<TankMotor>();
+        turretMotor = this.gameObject.GetComponentInChildren<TurretMotor>();
+        shellInstance = gameObject.GetComponentInParent<InstantiateShell>();
     }
 
     // Update is called once per frame
@@ -32,14 +28,15 @@ public class TankControls : MonoBehaviour
 
     void InputManager()
     {
+        // move tank
         if (Input.GetKey(KeyCode.W))
         {
-            Debug.Log("Forward");
+            Debug.Log("Tank Forward");
             tankMotor.TankEngine(tankData.speedForward);
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            Debug.Log("Reverse");
+            Debug.Log("Tank Reverse");
             tankMotor.TankEngine(-tankData.speedReverse);
         }
         else
@@ -47,14 +44,16 @@ public class TankControls : MonoBehaviour
             Debug.Log("Idol Dirve");
         }
 
+
+        // rotate tank
         if (Input.GetKey(KeyCode.A))
         {
-            Debug.Log("Left");
+            Debug.Log("Tank Left");
             tankMotor.TankRotation(-tankData.speedTankRotation);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            Debug.Log("Right");
+            Debug.Log("Tank Right");
             tankMotor.TankRotation(tankData.speedTankRotation);
         }
         else
@@ -62,17 +61,27 @@ public class TankControls : MonoBehaviour
             Debug.Log("Idol Rotate");
         }
 
+        // rotate turret
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            Debug.Log("Turret Left");
+            turretMotor.TurretRotation(-tankData.speedTurretRotation);
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            Debug.Log("Turret Right");
+            turretMotor.TurretRotation(tankData.speedTurretRotation);
+        }
+        else
+        {
+            Debug.Log("Idol Turret");
+        }
 
+        // Shoot
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Fired Shell");
+            shellInstance.FireShell();
+        }
     }
-/*
-    void TankMotor(float speed)
-    {
-        tankData.transform.Translate(new Vector3(0, 0, 1) * speed * Time.deltaTime);
-    }
-
-    void TankRotation(float speed)
-    {
-        tankData.transform.Rotate(new Vector3(0, 10, 0) * speed * Time.deltaTime);
-    }
-*/
 }

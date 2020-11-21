@@ -11,11 +11,6 @@ public class TankMotor : MonoBehaviour
         tankPosition = this.gameObject.transform;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void TankEngine(float speed)
     {
         tankPosition.transform.Translate(new Vector3(0, 0, 1) * speed * Time.deltaTime);

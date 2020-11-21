@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class TurretMotor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Transform turretPosition;
+    private void Awake()
     {
-        
+        turretPosition = this.gameObject.transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TurretRotation(float speed) 
     {
-        
+        turretPosition.transform.Rotate(new Vector3(0, 10, 0) * speed * Time.deltaTime);
     }
+
 }
