@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class TurretMotor : MonoBehaviour
 {
+    public GameObject tankTurret;
+
     Transform turretPosition;
     private void Awake()
     {
-        turretPosition = this.gameObject.transform;
+        turretPosition = tankTurret.gameObject.transform;
     }
 
     public void TurretRotation(float speed) 
