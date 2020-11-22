@@ -328,6 +328,8 @@ GameObject:
   - component: {fileID: 3861865052078646841}
   - component: {fileID: 7835080982706082309}
   - component: {fileID: -9030313633554104611}
+  - component: {fileID: 1268764686294185425}
+  - component: {fileID: 1857645888769842297}
   m_Layer: 0
   m_Name: Shell
   m_TagString: Standard Shell
@@ -363,7 +365,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 0.001
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -377,12 +379,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1282521452654936014}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 1}
+  m_Height: 2
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.5}
 --- !u!114 &-9030313633554104611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,4 +398,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shellDamageOutput: 0
-  shellVelocity: 30
+  shellVelocity: 42
+--- !u!114 &1268764686294185425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282521452654936014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd16f95d4d3cdc45b2daf0296fe63c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 1282521452654936014}
+  delayTime: 10
+--- !u!114 &1857645888769842297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282521452654936014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9d43739e363b1449c9b776d97deb45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTank: {fileID: 8750227686007692788, guid: 8325423e14af88e4e992d79700af0bcb,
+    type: 3}

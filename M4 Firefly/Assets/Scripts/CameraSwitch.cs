@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraSwitch : MonoBehaviour
 {
+    [Header ("Camera Options")]
     public GameObject menuCamera;
     public GameObject tankCamera;
     

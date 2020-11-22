@@ -397,6 +397,7 @@ MonoBehaviour:
   speedReverse: 0
   speedTankRotation: 0
   speedTurretRotation: 0
+  tankHealth: 0
   ammoCapacity: 0
 --- !u!65 &8750227686007692791
 BoxCollider:
