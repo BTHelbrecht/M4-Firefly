@@ -1,21 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq.Expressions;
 using UnityEngine;
 
+// GAME MANAGER SCRIPT
 public class GameManager : MonoBehaviour
 {
+    // assign terrain game object to spawn
     public GameObject terrain;
-    public GameObject player;
-    public GameObject Camera;
 
+    // use script to get array for enemy takes
     SpawnEnemyTanks enemiesArray;
 
     // Start is called before the first frame update
     void Start()
     {
+        // call terrain to spawn
         MakeTerrain();
+        // Call enemies to spawn
         MakeEnemies();
-        MakePlayer();
     }
 
     // Update is called once per frame
@@ -54,24 +58,20 @@ public class GameManager : MonoBehaviour
          */ 
     }
 
+    // instance of Terrain
     private void MakeTerrain()
     {
         GameObject.Instantiate(terrain, terrain.transform.position, terrain.transform.rotation);
     }
 
+    // instance of enemy tanks in an array
     private void MakeEnemies()
     {
+        // assign variable to enemy array
+        // call the spawnenemy array
         enemiesArray = this.gameObject.GetComponent<SpawnEnemyTanks>();
         enemiesArray.SpawnEnemyTank();
     }
 
-    private void MakePlayer()
-    {
-        GameObject.Instantiate(player, player.transform.position, player.transform.rotation);
-    }
-
-    private void MakeCamera()
-    {
-        GameObject.Instantiate(Camera, Camera.transform.position, Camera.transform.rotation);
-    }
+   
 }

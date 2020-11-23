@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// FUTURE USE NOT IN USE NOW
 public class CameraSwitch : MonoBehaviour
 {
     [Header ("Camera Options")]
