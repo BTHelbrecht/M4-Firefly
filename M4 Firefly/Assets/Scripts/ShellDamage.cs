@@ -6,14 +6,30 @@ public class ShellDamage : MonoBehaviour
 {
     public GameObject enemyTank;
     Collider enemyTankCollider;
+   
     private void Awake()
     {
-        enemyTankCollider = enemyTank.gameObject.GetComponent<BoxCollider>();
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        enemyTankCollider = enemyTank.GetComponent<Collider>();
+
+        Debug.Log(enemyTankCollider);
         Debug.Log(other);
+        
+        if (enemyTankCollider != other)
+        {
+            Debug.Log(other);
+            Debug.Log("Hit Tank");
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
+        }
+       
+       
+
+        /*dd
         if (other == enemyTankCollider)
         {
             Debug.Log("Hit Tank");
@@ -24,6 +40,6 @@ public class ShellDamage : MonoBehaviour
         {
             Debug.Log("Hit Other");
             Destroy(this.gameObject);
-        }
+        }*/
     }
 }

@@ -427,3 +427,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTank: {fileID: 8750227686007692788, guid: 8325423e14af88e4e992d79700af0bcb,
     type: 3}
+  enemyTankCollider: {fileID: 8750227686007692791, guid: 8325423e14af88e4e992d79700af0bcb,
+    type: 3}
