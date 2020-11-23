@@ -445,6 +445,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1972698243}
     m_Modifications:
+    - target: {fileID: 325920522286893374, guid: 3e5b1353092d8e640b2ad2430da83044,
+        type: 3}
+      propertyPath: managerObject
+      value: 
+      objectReference: {fileID: 1972698242}
     - target: {fileID: 3691978898249752046, guid: 3e5b1353092d8e640b2ad2430da83044,
         type: 3}
       propertyPath: turretPosition
@@ -758,6 +763,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3215acd46f4e264da44ee1687ae6b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  terrain: {fileID: 0}
+  player: {fileID: 0}
+  Camera: {fileID: 0}
 --- !u!114 &1972698246
 MonoBehaviour:
   m_ObjectHideFlags: 0

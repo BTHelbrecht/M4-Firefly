@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    SpawnEnemyTanks arraytest;
+    public GameObject terrain;
+    public GameObject player;
+    public GameObject Camera;
+
+    SpawnEnemyTanks enemiesArray;
 
     // Start is called before the first frame update
     void Start()
     {
-        arraytest = this.gameObject.GetComponent<SpawnEnemyTanks>();
-        arraytest.SpawnEnemyTank();
+        MakeTerrain();
+        MakeEnemies();
+        MakePlayer();
     }
 
     // Update is called once per frame
@@ -47,5 +52,26 @@ public class GameManager : MonoBehaviour
 
 
          */ 
+    }
+
+    private void MakeTerrain()
+    {
+        GameObject.Instantiate(terrain, terrain.transform.position, terrain.transform.rotation);
+    }
+
+    private void MakeEnemies()
+    {
+        enemiesArray = this.gameObject.GetComponent<SpawnEnemyTanks>();
+        enemiesArray.SpawnEnemyTank();
+    }
+
+    private void MakePlayer()
+    {
+        GameObject.Instantiate(player, player.transform.position, player.transform.rotation);
+    }
+
+    private void MakeCamera()
+    {
+        GameObject.Instantiate(Camera, Camera.transform.position, Camera.transform.rotation);
     }
 }

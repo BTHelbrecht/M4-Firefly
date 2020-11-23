@@ -330,9 +330,10 @@ GameObject:
   - component: {fileID: 8750227686007692784}
   - component: {fileID: 8750227686007692791}
   - component: {fileID: 8750227686007692790}
+  - component: {fileID: 410683375555235624}
   m_Layer: 0
   m_Name: Enemy Tank
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -393,10 +394,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36c192c404a12541b6703e3b0d4afb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedForward: 0
-  speedReverse: 0
-  speedTankRotation: 0
-  speedTurretRotation: 0
+  speedForward: 10
+  speedReverse: 10
+  speedTankRotation: 10
+  speedTurretRotation: 10
   tankHealth: 0
   ammoCapacity: 0
 --- !u!65 &8750227686007692791
@@ -425,6 +426,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.6102508, y: 0.38057646, z: 1.7120473}
   m_Center: {x: -0.39351958, y: -0.30971178, z: -1.3701109}
+--- !u!114 &410683375555235624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8750227686007692788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43203af8b85b5854ab8e490827fa745d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemytank: {fileID: 8750227686007692788}
 --- !u!1 &8750227686220725197
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +532,7 @@ GameObject:
   - component: {fileID: 8750227686346188079}
   m_Layer: 0
   m_Name: E Tank Turret
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -772,7 +786,7 @@ GameObject:
   - component: {fileID: 8750227686527481534}
   m_Layer: 0
   m_Name: E Tank Body
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

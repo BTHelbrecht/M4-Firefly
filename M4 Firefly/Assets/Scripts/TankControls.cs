@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TankControls : MonoBehaviour
 {
+    public GameObject managerObject;
+
     //Transform tankPosition;
     TankData tankData;
     TankMotor tankMotor;
@@ -16,7 +18,8 @@ public class TankControls : MonoBehaviour
         tankData = this.gameObject.GetComponent<TankData>();
         tankMotor = this.gameObject.GetComponent<TankMotor>();
         turretMotor = this.gameObject.GetComponentInChildren<TurretMotor>();
-        shellInstance = gameObject.GetComponentInParent<InstantiateShell>();
+        shellInstance = this.managerObject.gameObject.GetComponentInParent<InstantiateShell>();
+        Debug.Log(shellInstance);
     }
 
     // Update is called once per frame
