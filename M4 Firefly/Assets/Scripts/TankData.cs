@@ -5,12 +5,20 @@ using UnityEngine;
 // TANK DATA VARIABLES
 public class TankData : MonoBehaviour
 {
+    public GameObject turretObject;
+    public GameObject firePointObject;
+
     // Variables for tank via inspector
-    [Header("Tank Data Variables")]
-    public float speedForward;  // speed modifier    
-    public float speedReverse;  //speed backwards modifier
-    public float speedTankRotation; // tank rotation modifier
-    public float speedTurretRotation;   // turret rotation modifier
-    public float tankHealth;    // tank HP
-    public int ammoCapacity;    // future feature ammo
+    [Header("Tank Movement Data")]
+    public float driveSpeedModifier;  // speed modifier    
+    public float reverseSpeedModifier;  //speed backwards modifier
+    public float tankRotationModifier; // tank rotation modifier
+    public float turretRotationModifier;   // turret rotation modifier
+
+    [Header("Tank Shooting Data")]
+    public int tankAmmoCapacity;    // future feature ammo
+    public float tankFireRate;
+
+    [Header("Tank Status Data")]
+    public float tankHealthPoints;    // tank HP
 }

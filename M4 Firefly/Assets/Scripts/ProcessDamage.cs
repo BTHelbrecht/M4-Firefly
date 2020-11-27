@@ -27,11 +27,11 @@ public class ProcessDamage : MonoBehaviour
         if (other.tag == "Standard Shell")
         {
             // minus 1 health
-            this.tankData.tankHealth--;
+            this.tankData.tankHealthPoints--;
         }
 
         // if health is below starting health
-        if (this.tankData.tankHealth <= 0)
+        if (this.tankData.tankHealthPoints <= 0)
         {
             // destroy this tank
             Destroy(this.gameObject);

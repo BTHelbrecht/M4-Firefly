@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class TankMotor : MonoBehaviour
 {
-    Transform tankPosition;
+    public GameObject turretObject;
 
-    private void Awake()
+    public TankData tankData;
+    public CharacterController simpleMove;
+
+    void Awake()
     {
-        tankPosition = this.gameObject.transform;
+        tankData = GetComponent<TankData>();
+        simpleMove = GetComponent<CharacterController>();
     }
 
-    public void TankEngine(float speed)
+    public void TankEngine(Vector3 moveOnAxis)
     {
-        tankPosition.transform.Translate(new Vector3(0, 0, 1) * speed * Time.deltaTime);
+        transform.Rotate(0, moveOnAxis.y * tankData.tankRotationModifier * Time.deltaTime, 0);
+        Debug.Log(tankData.tankRotationModifier);
+        Vector3 currentMoveVector = Vector3.zero;
+        currentMoveVector.z = moveOnAxis.z * tankData.reverseSpeedModifier;
+        currentMoveVector = transform.TransformDirection(currentMoveVector);
+        simpleMove.SimpleMove(currentMoveVector);
     }
 
-    public void TankRotation(float speed)
+    public void TurretEnigne(Vector3 moveOnAxis)
     {
-        tankPosition.transform.Rotate(new Vector3(0, 10, 0) * speed * Time.deltaTime);
+        turretObject.transform.Rotate(0, moveOnAxis.y * tankData.turretRotationModifier * Time.deltaTime, 0);
     }
+
+
+
 }
